@@ -85,11 +85,12 @@ done
 cp -R $tmp_path/kenzok8_packages_libs/* $project_root_path/
 
 # 提交
-cd $tmp_path/kenzok8_packages
-latest_commit_id=`git rev-parse HEAD`
-latest_commit_msg=`git log --pretty=format:"%s" $current_git_branch_latest_id -1`
-echo $latest_commit_id
-echo $latest_commit_msg
+# cd $tmp_path/kenzok8_packages
+# latest_commit_id=`git rev-parse HEAD`
+# latest_commit_msg=`git log --pretty=format:"%s" $current_git_branch_latest_id -1`
+# echo $latest_commit_id
+# echo $latest_commit_msg
 
 cd $project_root_path
-git add -A && git commit -m "$latest_commit_msg" && git push origin master
+cur_time=$(date "+%Y%m%d-%H%M%S")
+git add -A && git commit -m "$cur_time" && git push origin master

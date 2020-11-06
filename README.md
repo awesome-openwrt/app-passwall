@@ -7,22 +7,23 @@
     * dns2socks
     * ipt2socks
     * kcptun
-    * ~~openssl1.1~~
+    * **~~openssl1.1~~**
     * pdnsd-alt
     * shadowsocksr-libev
     * simple-obfs
     * ssocks
-    * ~~syncthing~~
-    * ~~trojan~~
+    * **~~syncthing~~**
+    * **~~trojan~~**
     * trojan-go
     * trojan-plus
     * v2ray
     * v2ray-plugin
-    * ~~verysync~~
+    * **~~verysync~~**
 
 ---
 
 ## Thanks
 
+* [lienol/openwrt-package](https://github.com/xiaorouji/openwrt-package)
 * [kenzok8/openwrt-packages](https://github.com/kenzok8/openwrt-packages)
 * [kenzok8/small](https://github.com/kenzok8/small)
