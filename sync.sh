@@ -28,15 +28,15 @@ if [ `grep -c "luci-app-passwall" .git/info/sparse-checkout` -eq 0 ]; then
 fi
 git pull --depth 1 origin master
 
-# git 同步 kenzok8/small 源码
-if [ ! -d $tmp_path/kenzok8_packages_libs ]; then
-    mkdir -p $tmp_path/kenzok8_packages_libs
-    cd $tmp_path/kenzok8_packages_libs
+# git 同步 xiaorouji/openwrt-package 源码
+if [ ! -d $tmp_path/xiaorouji ]; then
+    mkdir -p $tmp_path/xiaorouji
+    cd $tmp_path/xiaorouji
     git init
-    git remote add origin https://github.com/kenzok8/small.git
+    git remote add origin https://github.com/xiaorouji/openwrt-package.git
     git config core.sparsecheckout true
 fi
-cd $tmp_path/kenzok8_packages_libs
+cd $tmp_path/xiaorouji
 if [ ! -e .git/info/sparse-checkout ]; then
     touch .git/info/sparse-checkout
 fi
@@ -57,12 +57,13 @@ trojan-go
 trojan-plus
 v2ray
 v2ray-plugin
+tcping
 # verysync
 )
 for var in ${array_libs[*]}
 do
-    if [ `grep -c "$var" .git/info/sparse-checkout` -eq 0 ]; then
-        echo "$var" >> .git/info/sparse-checkout
+    if [ `grep -c "package/$var" .git/info/sparse-checkout` -eq 0 ]; then
+        echo "package/$var" >> .git/info/sparse-checkout
     fi
 done
 git pull --depth 1 origin master
@@ -82,7 +83,7 @@ do
         rm -rf $project_root_path/$var
     fi
 done
-cp -R $tmp_path/kenzok8_packages_libs/* $project_root_path/
+cp -R $tmp_path/xiaorouji/package/ $project_root_path/
 
 # 提交
 # cd $tmp_path/kenzok8_packages

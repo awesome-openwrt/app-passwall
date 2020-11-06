@@ -18,6 +18,7 @@
     * trojan-plus
     * v2ray
     * v2ray-plugin
+    * tcping
     * **~~verysync~~**
 
 ---
